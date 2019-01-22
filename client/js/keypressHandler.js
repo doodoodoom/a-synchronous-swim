@@ -7,4 +7,10 @@ $('body').on('keydown', (event) => {
   }
 });
 
+$('button').on('click', () => {
+  var directions = ['up', 'down', 'left', 'right'];
+  var index = Math.floor(Math.random() * directions.length);
+  SwimTeam.move(directions[index]);
+});
+
 console.log('Client is running in the browser!');
