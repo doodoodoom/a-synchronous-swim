@@ -1,4 +1,4 @@
-
+// how to get IIFE from httpFetcher to run without copypasting?
 $('body').on('keydown', (event) => {
   var arrowPress = event.key.match(/Arrow(Up|Down|Left|Right)/);
   if (arrowPress) {
@@ -7,21 +7,18 @@ $('body').on('keydown', (event) => {
   }
 });
 
+// how to get data from server?
+// use get instead of ajax (definitely can use ajax, but keep it simple buddy!).
+// get from url, define function argument with direction argument to grab info 
+// from server. use that argument to pass into SwimTeam.move()
 $('button').on('click', () => {
   (function() {
 
-    const serverUrl = 'http://127.0.0.1:3000';
-  
-    $.ajax({
-      url: serverUrl,
-      type: 'GET',
-      success: () => {
-        console.log('I WORKED');
-      },
-      error: () => {
-        console.log('I FAILED');
-      }
+    $.get('http://127.0.0.1:3000', (direction) => {
+      SwimTeam.move(direction);
     });
+  
+    
   
   })();
 });
