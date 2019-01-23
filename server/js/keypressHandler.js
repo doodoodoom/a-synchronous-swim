@@ -38,6 +38,7 @@ module.exports.initialize = () => {
     if (isValidMessage(key.name)) {
       console.log(`Message received: ${key.name}`);
       require('./messageQueue').enqueue(key.name);
+      // console.log(require('./messageQueue').data);
       return; // don't do any more processing on this key
     }
     
@@ -48,6 +49,7 @@ module.exports.initialize = () => {
       if (isValidMessage(message)) {
         console.log(`Message received: ${message}`);
         require('./messageQueue').enqueue(message);
+        // console.log(require('./messageQueue').data);
         
       }
       // clear the buffer where we are collecting keystrokes

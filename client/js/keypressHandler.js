@@ -16,10 +16,10 @@ $('button').on('click', () => {
       url: serverUrl,
       type: 'GET',
       success: () => {
-        var directions = ['up', 'down', 'left', 'right'];
-        var index = Math.floor(Math.random() * directions.length);
-        SwimTeam.move(directions[index]);
         console.log('I WORKED');
+      },
+      error: () => {
+        console.log('I FAILED');
       }
     });
   
